@@ -74,3 +74,28 @@
 {
   background-color: red;
 }
+
+
+.next-question
+{
+  margin: 15px;
+  padding: 10px;
+  color: #002880;
+  background-color:rgb(203, 249, 255);
+  height: 70px;
+  width: 150px;
+  font-weight: bolder;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.next-question:hover
+{
+  background-color: #002880;
+  color: rgb(203, 249, 255);
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 200ms ease-in-out;
+}
