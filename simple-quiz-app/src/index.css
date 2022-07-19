@@ -7,11 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(
     to right,
-    rgb(153, 0, 167),
+    rgb(0, 0, 0),
+    rgb(255, 189, 255),
+    rgb(204, 0, 255)
+    /* rgb(153, 0, 167),
     rgb(88, 8, 119),
     rgb(186, 5, 231),
     rgb(0, 80, 80),
-    rgb(235, 139, 139)
+    rgb(235, 139, 139) */
   );
 }
 

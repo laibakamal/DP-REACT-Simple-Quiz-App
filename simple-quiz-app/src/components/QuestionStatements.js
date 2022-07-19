@@ -25,12 +25,14 @@ function QuestionStatements(props)
                 }
             </div>
 
-            {
-                props.showCorrectAnswer &&(
-                    <button onClick={()=>props.handleNextQuestion()}
-                    className="next-question"> Submit Question </button>
-                )
-            }
+
+            <div class="nav-buttons">
+                <button onClick={()=>props.handleNextQuestion()}
+                    className="next-question"> Submit Question 
+                    disabled={props.showCorrectAnswer}
+                </button>
+                
+            </div>
         </  >
     )
 }
