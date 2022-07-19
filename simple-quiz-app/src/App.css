@@ -52,3 +52,25 @@
   transform: scale(1.05);
   transition: transform 200ms ease-in-out;
 }
+
+.green-button
+{
+  background-color:green;
+  color: white;
+}
+
+.green-button:hover
+{
+  background-color: green;
+}
+
+.red-button
+{
+  background-color:red;
+  color: white;
+}
+
+.red-button:hover
+{
+  background-color: red;
+}
