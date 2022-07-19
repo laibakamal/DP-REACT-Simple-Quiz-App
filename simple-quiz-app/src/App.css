@@ -1,12 +1,13 @@
 .container
 {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
 }
-
 .question-statement
 {
   padding: 10px;
@@ -15,5 +16,39 @@
   border-radius: 10px;
   min-width: 400px;
   max-width: 900px;
-  background-color: rgb(219, 126, 255);
+  background-color: rgb(227, 155, 255);
+  color: #680075;
+  text-align: center;
+}
+
+.question-options
+{
+  column-count: 2;
+  padding: 20px;
+  width: 800px; 
+
+}
+
+.option
+{
+  margin: 15px;
+  padding: 10px;
+  color: #733b81;
+  background-color:rgb(235, 185, 255);
+  height: 70px;
+  width: 380px;
+  font-weight: bolder;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.option:hover
+{
+  background-color: rgb(255, 94, 234);
+  color: white;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 200ms ease-in-out;
 }
