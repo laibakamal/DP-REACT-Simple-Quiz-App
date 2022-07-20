@@ -24,15 +24,6 @@ function QuestionStatements(props)
                  }) : <div>Loading...</div>
                 }
             </div>
-
-
-            <div class="nav-buttons">
-                <button onClick={()=>props.handleNextQuestion()}
-                    className="next-question"> Submit Question 
-                    disabled={props.showCorrectAnswer}
-                </button>
-                
-            </div>
         </  >
     )
 }

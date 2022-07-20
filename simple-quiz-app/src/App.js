@@ -1,6 +1,7 @@
 import './App.css';
 import axios from 'axios';
 import QuestionStatements from './components/QuestionStatements';
+import NavButtons from './components/NavButtons';
 import React, {useState, useEffect} from 'react';
 import ScoreBoard from './components/ScoreBoard';
 
@@ -37,6 +38,9 @@ function App()
   //to show the correct ans after user solves a question:
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
 
+  //to count the attempted questions:
+  const [attemptedQuestions, setAttemptedQuestions] = useState(0);
+
 
   //useEffect is a hook that runs after the component is rendered.
   useEffect(() => 
@@ -59,6 +63,7 @@ function App()
   //option buttons.
   const handleAnswerClick = (answer) => 
   {
+    //document.getElementById("submit").disabled = false;
       //if the answer is correct, increment the score and count of correct answers.
       if(answer===questions[currentQuestion].correct_answer)
       {
@@ -79,6 +84,20 @@ function App()
     setCurrentQuestion(currentQuestion+1);
     setShowCorrectAnswer(false);
   }
+
+  const handleSubmitQuestion = () =>
+  {
+    //document.getElementById("next").disabled = false;
+    setAttemptedQuestions(attemptedQuestions+1);
+  }
+
+  const handleSkipQuestion = () =>
+  {
+    setCurrentQuestion(currentQuestion+1);
+    setShowCorrectAnswer(false);
+  }
+
+
   return (
     //if the data is not fetched from the API so far, then "LOADING..." will be displayed.
     //else, the QuestionStatements component will be displayed.
@@ -89,9 +108,12 @@ function App()
           //render the question statements.
           //else if the current question is equal to the total questions,
           //render the score board.
-          currentQuestion >= 10 ? 
-            (<ScoreBoard score={score} correct_answers={correct_answers} incorrect_answers={incorrect_answers}/>) :
-            (<QuestionStatements data={questions[currentQuestion]} handleAnswerClick={handleAnswerClick} handleNextQuestion={handleNextQuestion} showCorrectAnswer={showCorrectAnswer }/>)
+          currentQuestion < 10 ? 
+            <>
+            <QuestionStatements data={questions[currentQuestion]} handleAnswerClick={handleAnswerClick} showCorrectAnswer={showCorrectAnswer} />
+            <NavButtons handleNextQuestion={handleNextQuestion}  handleSubmitQuestion={handleSubmitQuestion} handleSkipQuestion={handleSkipQuestion}/>
+            </>  :
+            (<ScoreBoard score={score} correct_answers={correct_answers} incorrect_answers={incorrect_answers} attemptedQuestions={attemptedQuestions}/>) 
         }
       </div>
     ) : <div className="container"><h1>LOADING...</h1></div>

@@ -17,7 +17,7 @@
   min-width: 400px;
   max-width: 900px;
   background-color: rgb(227, 155, 255);
-  color: #680075;
+  color: #002975;
   text-align: center;
 }
 
@@ -26,7 +26,6 @@
   column-count: 2;
   padding: 20px;
   width: 800px; 
-
 }
 
 .option
@@ -83,7 +82,7 @@
   color: #002880;
   background-color:rgb(203, 249, 255);
   height: 70px;
-  width: 150px;
+  width: 200px;
   font-weight: bolder;
   font-size: large;
   outline: none;
@@ -98,4 +97,46 @@
   cursor: pointer;
   transform: scale(1.05);
   transition: transform 200ms ease-in-out;
+}
+
+.next-question:disabled
+{
+  background-color: rgb(181, 197, 199);
+  color: rgb(4, 83, 94);
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+
+.submit-question
+{
+  margin: 15px;
+  padding: 10px;
+  color: #002880;
+  background-color:rgb(203, 249, 255);
+  height: 70px;
+  width: 200px;
+  font-weight: bolder;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+.submit-question:hover
+{
+  background-color: #002880;
+  color: rgb(203, 249, 255);
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 200ms ease-in-out;
+}
+
+.submit-question:disabled
+{
+  background-color: rgb(181, 197, 199);
+  color: rgb(4, 83, 94);
+  cursor: not-allowed;
+  transform: none;
 }
