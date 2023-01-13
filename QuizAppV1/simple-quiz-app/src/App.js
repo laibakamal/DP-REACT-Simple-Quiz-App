@@ -4,7 +4,7 @@ import QuestionStatements from './components/QuestionStatements';
 import NavButtons from './components/NavButtons';
 import React, {useState, useEffect} from 'react';
 import ScoreBoard from './components/ScoreBoard';
-import Timer from './components/Timer';
+
 const API_URL = 'https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple';
 function App() 
 {
@@ -63,21 +63,19 @@ function App()
   //option buttons.
   const handleAnswerClick = (answer) => 
   {
-    document.getElementById("opt-button").disabled = true;
-    //if the answer is correct, increment the score and count of correct answers.
-    if(answer===questions[currentQuestion].correct_answer)
-    {
-      setScore(score+1);
-      setCorrectAnswers(correct_answers+1);
-    }
+    //document.getElementById("submit").disabled = false;
+      //if the answer is correct, increment the score and count of correct answers.
+      if(answer===questions[currentQuestion].correct_answer)
+      {
+        setScore(score+1);
+        setCorrectAnswers(correct_answers+1);
+      }
     //else if the answer is incorrect, increment the count of incorrect answers.
     else
     {
       setIncorrectAnswers(incorrect_answers+1);
     }
-    
-
-    setShowCorrectAnswer(true); 
+    setShowCorrectAnswer(true);    
   }
   
 
@@ -89,6 +87,7 @@ function App()
 
   const handleSubmitQuestion = () =>
   {
+    //document.getElementById("next").disabled = false;
     setAttemptedQuestions(attemptedQuestions+1);
   }
 
@@ -102,7 +101,6 @@ function App()
   return (
     //if the data is not fetched from the API so far, then "LOADING..." will be displayed.
     //else, the QuestionStatements component will be displayed.
-
     questions.length > 0 ? (
       <div className="container">
         {
@@ -112,7 +110,6 @@ function App()
           //render the score board.
           currentQuestion < 10 ? 
             <>
-            <Timer initialMinutes={0} initialSeconds={10} handleNextQuestion={handleNextQuestion} handleSkipQuestion={handleSkipQuestion}/>
             <QuestionStatements data={questions[currentQuestion]} handleAnswerClick={handleAnswerClick} showCorrectAnswer={showCorrectAnswer} />
             <NavButtons handleNextQuestion={handleNextQuestion}  handleSubmitQuestion={handleSubmitQuestion} handleSkipQuestion={handleSkipQuestion}/>
             </>  :

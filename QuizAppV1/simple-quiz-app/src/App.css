@@ -32,7 +32,7 @@
 {
   margin: 15px;
   padding: 10px;
-  color: rgb(148, 0, 161);
+  color: #733b81;
   background-color:rgb(235, 185, 255);
   height: 70px;
   width: 380px;
@@ -92,7 +92,8 @@
 
 .next-question:hover
 {
-  background-color: #67dcff;
+  background-color: #002880;
+  color: rgb(203, 249, 255);
   cursor: pointer;
   transform: scale(1.05);
   transition: transform 200ms ease-in-out;
@@ -125,7 +126,8 @@
 
 .submit-question:hover
 {
-  background-color: #67dcff;
+  background-color: #002880;
+  color: rgb(203, 249, 255);
   cursor: pointer;
   transform: scale(1.05);
   transition: transform 200ms ease-in-out;
@@ -138,11 +140,3 @@
   cursor: not-allowed;
   transform: none;
 }
-
-
-.timer
-{
-  color: white;
-}
-
-

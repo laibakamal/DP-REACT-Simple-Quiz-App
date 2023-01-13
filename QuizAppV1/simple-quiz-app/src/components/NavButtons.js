@@ -4,6 +4,7 @@ function NavButtons(props)
 {
     return (
         <>
+
             <div className="nav-buttons">
                 <button type="button" id="next" onClick={()=>props.handleNextQuestion()}
                     className="next-question"> Next Question
@@ -14,7 +15,7 @@ function NavButtons(props)
                 </button>
 
                 <button onClick={()=>props.handleSkipQuestion()}
-                    className="submit-question" id="skip"> Skip Question
+                    className="submit-question"> Skip Question
                 </button>
                 
             </div>

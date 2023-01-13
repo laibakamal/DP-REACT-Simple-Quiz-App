@@ -2,7 +2,6 @@ import React from "react";
 
 function QuestionStatements(props) 
 {
-
     return (
         <>
             <div className="question-statement">
@@ -16,9 +15,7 @@ function QuestionStatements(props)
                     ) : "";
 
                     return(
-                        <button key={index}
-                            type="button"                         
-                            id="opt-button"
+                        <button key={index} 
                             className={`option ${setAnswerColors}`}
                             onClick={()=>props.handleAnswerClick(answer)}
                             dangerouslySetInnerHTML={{__html:answer}}>
